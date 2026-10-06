@@ -6,7 +6,7 @@
   <meta name="description" content="Ishuz — The Collective Intelligence Website that anyone can use">
   <meta name="keywords" content="wisdom, crowds, prediction, opinion, collective intelligence, Surowiecki">
   <title>Ishuz: The Collective Intelligence Website</title>
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 <div id="page_wrapper">
@@ -30,6 +30,7 @@
         <li id="nav-logout"   style="display:none"><a href="#" id="logout-link">Logout</a></li>
         <li id="nav-register"><a href="register.html">Register</a></li>
         <li><a href="add-question.html" target="_blank">Ask</a></li>
+        <li><a href="#sources_section">Sources</a></li>
         <li><a href="https://en.wikipedia.org/wiki/The_Wisdom_of_Crowds" target="_blank">About WoC</a></li>
       </ul>
     </nav>
@@ -46,17 +47,55 @@
         <li><a href="add-question.html" target="_blank">Ask a question</a></li>
         <li><a href="register.html">Register</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="#sources_section">Question Sources</a></li>
       </ul>
 
       <div id="about_section">
         <h3>About</h3>
         <p>This is an experimental site implementing
           <a href="https://en.wikipedia.org/wiki/The_Wisdom_of_Crowds"
-             target="_blank">Wisdom of Crowds</a>
+             target="_blank" rel="noopener">Wisdom of Crowds</a>
           by <a href="https://en.wikipedia.org/wiki/James_Surowiecki"
-                target="_blank">James Surowiecki</a>.
+                target="_blank" rel="noopener">James Surowiecki</a>.
         </p>
         <p>Answer questions and see what the crowd collectively thinks!</p>
+      </div>
+
+      <div id="sources_section">
+        <h3>Question Sources &amp; Research</h3>
+        <p class="sources-desc">Curated from foundational collective intelligence studies and public consensus archives:</p>
+        <ul class="sources-list">
+          <li>
+            <a href="https://en.wikipedia.org/wiki/The_Wisdom_of_Crowds" target="_blank" rel="noopener">
+              <span class="source-title">📖 James Surowiecki (2004)</span>
+              <span class="source-detail">The foundational book on crowd cognition &amp; coordination</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.nature.com/articles/075450a0" target="_blank" rel="noopener">
+              <span class="source-title">🐂 Francis Galton (1906, Nature)</span>
+              <span class="source-detail">Original livestock weight estimation crowd study</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Yahoo!_Answers" target="_blank" rel="noopener">
+              <span class="source-title">💬 Yahoo! Answers (2007–2010)</span>
+              <span class="source-detail">Historical crowdsourced ecology, climate &amp; policy debates</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.metaculus.com" target="_blank" rel="noopener">
+              <span class="source-title">🔮 Metaculus &amp; Forecasting</span>
+              <span class="source-detail">Modern probability aggregation on climate &amp; AI timelines</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://ourworldindata.org" target="_blank" rel="noopener">
+              <span class="source-title">📊 Our World in Data</span>
+              <span class="source-detail">Global energy, demographic &amp; environmental benchmarks</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
