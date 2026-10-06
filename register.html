@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishuz — Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="page_wrapper">
+
+  <div id="page_header">
+    <h2>Ishuz</h2>
+    <h3>Create your account</h3>
+  </div>
+
+  <div id="menu_bar">
+    <nav id="navcontainer">
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="content_wrapper">
+    <div id="left_side"></div>
+
+    <div id="center">
+      <div class="form-page">
+        <h2>Join <a href="index.html">Ishuz</a></h2>
+        <p class="sub">Already have an account? <a href="login.html">Log in here</a></p>
+
+        <div id="msg" class="msg" role="alert"></div>
+
+        <form id="register_form" novalidate>
+
+          <div class="form-section-title">Account credentials</div>
+
+          <div class="field-group required">
+            <label for="user_name">Username</label>
+            <input type="text" id="user_name" name="user_name" maxlength="12"
+                   placeholder="Up to 12 characters" autocomplete="username">
+          </div>
+
+          <div class="field-group required">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email"
+                   placeholder="you@example.com" maxlength="100">
+          </div>
+
+          <div class="field-group required">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="new-password"
+                   placeholder="Min 6 characters">
+          </div>
+
+          <div class="field-group required">
+            <label for="password2">Confirm password</label>
+            <input type="password" id="password2" name="password2" autocomplete="new-password"
+                   placeholder="Repeat password">
+          </div>
+
+          <div class="form-section-title">Personal information</div>
+
+          <div class="field-group required">
+            <label for="first_name">First name</label>
+            <input type="text" id="first_name" name="first_name" maxlength="15">
+          </div>
+
+          <div class="field-group required">
+            <label for="last_name">Last name</label>
+            <input type="text" id="last_name" name="last_name" maxlength="15">
+          </div>
+
+          <div class="form-section-title">Optional profile details</div>
+
+          <div class="field-group">
+            <label for="country">Country <span class="optional-tag">(optional)</span></label>
+            <input type="text" id="country" name="country" maxlength="30">
+          </div>
+
+          <div class="field-group">
+            <label for="state_provice">State / Province <span class="optional-tag">(optional)</span></label>
+            <input type="text" id="state_provice" name="state_provice" maxlength="30">
+          </div>
+
+          <div class="field-group">
+            <label for="city_town">City / Town <span class="optional-tag">(optional)</span></label>
+            <input type="text" id="city_town" name="city_town" maxlength="30">
+          </div>
+
+          <div class="field-group">
+            <label for="language">Language <span class="optional-tag">(optional)</span></label>
+            <input type="text" id="language" name="language" maxlength="30">
+          </div>
+
+          <div class="field-group">
+            <label for="info_source">How did you hear about Ishuz? <span class="optional-tag">(optional)</span></label>
+            <input type="text" id="info_source" name="info_source" maxlength="100">
+          </div>
+
+          <!-- Honeypot — leave empty -->
+          <div style="display:none" aria-hidden="true">
+            <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="full-btn" id="register_btn">Create account</button>
+        </form>
+
+        <div class="form-links">
+          Already have an account? <a href="login.html">Log in</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="right_side"></div>
+  </div>
+
+  <div id="page_footer">
+    <p>Ishuz — Collective Intelligence &bull; <a href="index.html" style="color:#7aaac8">Home</a></p>
+  </div>
+</div>
+
+<script type="module" src="js/register.js"></script>
+</body>
+</html>

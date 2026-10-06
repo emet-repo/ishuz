@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishuz — Ask a Question</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="page_wrapper">
+
+  <div id="page_header">
+    <h2>Ishuz</h2>
+    <h3>Ask a question</h3>
+  </div>
+
+  <div id="menu_bar">
+    <nav id="navcontainer">
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="content_wrapper">
+    <div id="left_side"></div>
+
+    <div id="center">
+      <div class="form-page">
+        <h2>Add a new question</h2>
+        <p class="sub">Registered users can submit questions for the crowd to answer.</p>
+
+        <div id="msg" class="msg" role="alert"></div>
+
+        <!-- Auth-gate: shown when not logged in -->
+        <div id="auth_gate" style="display:none">
+          <p>You need to <a href="login.html"><b>log in</b></a> to add a question.</p>
+        </div>
+
+        <!-- Question form: shown when logged in -->
+        <form id="question_form" novalidate style="display:none">
+
+          <div class="field-group required">
+            <label for="question_text">Question text</label>
+            <textarea id="question_text" name="question_text" rows="4"
+                      placeholder="Ask something that the crowd can answer…"
+                      maxlength="300"></textarea>
+          </div>
+
+          <div class="field-group required">
+            <label for="question_type">Question type</label>
+            <select id="question_type" name="question_type">
+              <option value="multiple choice" selected>Multiple choice</option>
+              <option value="free text">Free text</option>
+              <option value="numeric">Numeric</option>
+            </select>
+          </div>
+
+          <!-- MC options (shown only for multiple choice) -->
+          <div id="mc_section">
+            <div class="form-section-title">Possible answers (A–E)</div>
+            <div class="mc-answers-grid">
+              <div class="mc-answer-row">
+                <span class="letter">A</span>
+                <input type="text" name="answer_a" id="answer_a" maxlength="100" placeholder="Option A">
+              </div>
+              <div class="mc-answer-row">
+                <span class="letter">B</span>
+                <input type="text" name="answer_b" id="answer_b" maxlength="100" placeholder="Option B">
+              </div>
+              <div class="mc-answer-row">
+                <span class="letter">C</span>
+                <input type="text" name="answer_c" id="answer_c" maxlength="100" placeholder="Option C (optional)">
+              </div>
+              <div class="mc-answer-row">
+                <span class="letter">D</span>
+                <input type="text" name="answer_d" id="answer_d" maxlength="100" placeholder="Option D (optional)">
+              </div>
+              <div class="mc-answer-row">
+                <span class="letter">E</span>
+                <input type="text" name="answer_e" id="answer_e" maxlength="100" placeholder="Option E (optional)">
+              </div>
+            </div>
+          </div>
+
+          <p id="type_hint" class="type-hint" style="display:none"></p>
+
+          <br>
+          <button type="submit" class="full-btn" id="submit_btn">Submit question</button>
+        </form>
+
+      </div>
+    </div>
+
+    <div id="right_side"></div>
+  </div>
+
+  <div id="page_footer">
+    <p>Ishuz — Collective Intelligence &bull; <a href="index.html" style="color:#7aaac8">Home</a></p>
+  </div>
+</div>
+
+<script type="module" src="js/add-question.js"></script>
+</body>
+</html>

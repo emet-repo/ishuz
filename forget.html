@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishuz — Forgot Password</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="page_wrapper">
+
+  <div id="page_header">
+    <h2>Ishuz</h2>
+    <h3>Password reset</h3>
+  </div>
+
+  <div id="menu_bar">
+    <nav id="navcontainer">
+      <ul id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="content_wrapper">
+    <div id="left_side"></div>
+
+    <div id="center">
+      <div class="form-page">
+        <h2>Forgot your password?</h2>
+        <p class="sub">Enter the e-mail address you registered with and we'll send you a reset link.</p>
+
+        <div id="msg" class="msg" role="alert"></div>
+
+        <form id="forget_form" novalidate>
+          <div class="field-group required">
+            <label for="email">E-mail address</label>
+            <input type="email" id="email" name="email" autocomplete="email"
+                   placeholder="you@example.com">
+          </div>
+          <button type="submit" class="full-btn" id="send_btn">Send reset link</button>
+        </form>
+
+        <div class="form-links">
+          <a href="login.html">Back to login</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="right_side"></div>
+  </div>
+
+  <div id="page_footer">
+    <p>Ishuz — Collective Intelligence &bull; <a href="index.html" style="color:#7aaac8">Home</a></p>
+  </div>
+</div>
+
+<script type="module">
+  import { supabase, showError, showSuccess } from './js/config.js';
+
+  document.getElementById('forget_form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msgEl  = document.getElementById('msg');
+    const email  = document.getElementById('email').value.trim();
+    const btn    = document.getElementById('send_btn');
+
+    if (!email) { showError(msgEl, 'Please enter your e-mail address.'); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/index.html'
+    });
+
+    if (error) {
+      showError(msgEl, 'Could not send reset email: ' + error.message);
+    } else {
+      showSuccess(msgEl, 'Reset link sent! Check your inbox (and spam folder).');
+      document.getElementById('forget_form').style.display = 'none';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Send reset link';
+  });
+</script>
+</body>
+</html>
