@@ -284,9 +284,9 @@ async function updateCommonStats() {
 
   document.getElementById('common_stats').innerHTML = `
     <ul class="stats-list">
-      <li>👤 Users:&nbsp;&nbsp;&nbsp;&nbsp; <strong>${u.count ?? 0}</strong></li>
-      <li>❓ Questions: <strong>${q.count ?? 0}</strong></li>
-      <li>💬 Answers:&nbsp;&nbsp; <strong>${a.count ?? 0}</strong></li>
+      <li><span>👥 Registered Users</span> <strong>${u.count ?? 0}</strong></li>
+      <li><span>❓ Active Questions</span> <strong>${q.count ?? 0}</strong></li>
+      <li><span>💬 Crowd Votes</span> <strong>${a.count ?? 0}</strong></li>
     </ul>`;
 }
 
@@ -299,8 +299,8 @@ async function updateUserStats(userId) {
 
   document.getElementById('user_stats').innerHTML = `
     <ul class="stats-list">
-      <li>💬 Answers:&nbsp;&nbsp; <strong>${ans.count ?? 0}</strong></li>
-      <li>❓ Questions: <strong>${qs.count ?? 0}</strong></li>
+      <li><span>💬 Your Votes</span> <strong>${ans.count ?? 0}</strong></li>
+      <li><span>❓ Your Questions</span> <strong>${qs.count ?? 0}</strong></li>
     </ul>`;
 }
 
